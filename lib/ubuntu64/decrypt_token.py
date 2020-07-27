@@ -1,0 +1,6 @@
+#!/usr/bin/env python2
+
+import token
+
+decrypted = token.DecryptString("\x7f\x16\x2d\x2a\x35\x26\x31\x30\x22\x2f\x0e\x2c\x27\x26\x2f\x7d")
+print(decrypted)
