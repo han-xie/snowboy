@@ -87,7 +87,8 @@ class SnowboyParser:
                 str_out = token + str(data) + ' '
                 self.f_out.write(str_out)
             elif token == '<Kw> ':
-                data = self.read_int_vector(7)
+                dim = self.read_int()
+                data = []
                 str_out = token
                 for i in range(0, 7):
                     str_out += str(data[i]) + ' '
@@ -156,6 +157,7 @@ class SnowboyParser:
             block = self.f_in.read(self.int_size)
             data.append(struct.unpack(self.integer, block)[0])
         str_out += token + ' '
+        str_out += str(tmp_dim) + ' '
         for i in range(0, tmp_dim):
             str_out += str(data[i]) + ' '
         str_out += '\n'
